@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>蔵本モデルによる同期現象　〜拍手のリズムはなぜ揃うのか？〜</title>
+		<title>蔵本モデルが解き明かすリズムの秘密　〜拍手のリズムはなぜ揃うのか？〜</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
@@ -25,7 +25,7 @@
 				<section data-markdown data-separator="---">
 					<textarea data-template>
 
-### 蔵本モデルによる同期現象
+### 蔵本モデルが解き明かすリズムの秘密
 #### 〜拍手のリズムはなぜ揃うのか？〜
 
 <img src="assets/images/title.png" height="400px">
@@ -66,7 +66,8 @@
 * 「同期現象 (バラバラだったリズムが揃う現象)」をモデル化できる蔵本モデルについて話します！
 * 蔵本モデルの数式の意味を噛み砕いて説明します
 * 「ホタルの点滅」を再現した蔵本モデルのシミュレーションを見てみましょう
-* 蔵本予想についても簡単に説明します
+* 蔵本予想と結合係数の臨界点
+* 代表的な「相転移」の紹介
 
 </div>
 
@@ -80,12 +81,13 @@
 
 <div class="simple-box">
 
-* 蔵本モデルとは、同期現象をモデル化するための数理モデル
+* 蔵本モデルとは、「リズムが揃う」現象をモデル化するための数理モデル
+* 1975年に蔵本由紀先生によって提唱された
 * メトロノームのリズムが揃っていく動画を見ましょう！
 
 </div>
 
-<img src="assets/images/Metronom-2.png" width="100%">
+<img src="assets/images/Metronom-2.png" width="60%">
 
 
 ---
@@ -177,8 +179,184 @@ $$ \frac{d\theta_i}{dt} = \omega_i + \frac{K}{N} \sum_{j=1}^N \sin(\theta_j - \t
 
 ---
 
-### ホタルの点滅: $K=3.25$
+### ホタルの点滅: $K=2$
 
+<div class="simple-box">
+
+* 時間をかけて徐々にリズムが揃っていく！
+
+</div>
+
+<img src="assets/images/firefly-K=2.png" width="55%">
+
+---
+
+### ホタルの点滅: $K=5$
+
+<div class="simple-box">
+
+* 結合係数が大きいと、リズムがすぐに揃う！
+
+</div>
+
+<img src="assets/images/firefly-K=5.png" width="55%">
+
+---
+
+### ホタルの点滅: $K=0$
+
+<div class="simple-box">
+
+* 結合係数が0のとき、いつまでもリズムは揃わない！
+
+</div>
+
+<img src="assets/images/firefly-K=0.png" width="50%">
+
+---
+
+### 結合係数の不思議な振る舞い
+
+<div class="simple-box">
+
+* $K=1.5$ の時はリズムが揃わない
+* $K=1.6$ の時は(時間がかかるが)リズムが揃う
+
+</div>
+
+<div class="container">
+
+<div class="col-left">
+
+<img src="assets/images/firefly-K=1.5.png" width="100%">
+
+</div>
+
+<div class="col-right">
+
+<img src="assets/images/firefly-K=1.6.png" width="100%">
+
+</div>
+
+</div>
+
+---
+
+## 蔵本予想と相転移
+
+---
+
+### 蔵本予想
+
+<div class="simple-box">
+
+* 結合係数が臨界点$K_c$を超えると、急激にリズムが揃うようになる
+* 0℃で水が急に氷になるようなイメージ
+
+</div>
+
+臨界点$K_c$は:
+
+$$ K_c = \dfrac{2}{\pi g(\omega)} $$
+
+* $g(\omega)$ は角速度の分布関数
+
+---
+
+### 臨界点の計算
+
+<div class="simple-box">
+
+* 今回のシミュレーションの角速度の分布関数$g(\omega)$は、標準正規分布$N(0,1)$
+
+</div>
+
+$$ g(\omega) = \frac{1}{\sqrt{2\pi}} e^{-\frac{\omega^2}{2}} $$
+
+---
+
+### 平均場の周波数
+
+<div class="simple-box">
+
+* 振動子全体の平均的な角速度は0になる
+* この平均的な角速度を「平均場の周波数」と呼ぶ
+* 系全体の分布を$g(0)$で代表できる
+
+</div>
+
+$$ g(0) = \frac{1}{\sqrt{2\pi}} $$
+
+---
+
+### 臨界点の計算
+
+$$ K_c = \dfrac{2}{\pi g(0)} = \dfrac{2}{\pi \frac{1}{\sqrt{2\pi}}} = \sqrt{\dfrac{8}{\pi}} \simeq 1.596 $$
+
+<div class="simple-box">
+
+* $K=1.6$ は臨界点をギリギリ超えているので、リズムが揃う！
+* $K=1.5$ は臨界点を下回っているので、リズムは揃わない
+* このように、臨界点を超えると急激に性質が変化する現象を「**相転移**」と呼ぶ
+
+</div>
+
+---
+
+### 相転移の例
+
+<div class="simple-box">
+
+* 相転移は様々な物理現象で現れる
+  * 水が0℃で氷になる
+  * 水が100℃で蒸発する
+  * 磁石が高温で磁性を失う
+  * 真空の相転移 (宇宙の始まり)
+
+</div>
+
+<div class="container">
+
+<div class="col-left">
+
+<img src="assets/images/Kochendes_wasser02.jpg" width="80%">
+
+</div>
+
+<div class="col-right">
+
+<img src="assets/images/512px-20210131_twig_withBuds_coveredByIce_DSC05404_PtrQs.jpg" width="100%">
+
+</div>
+
+</div>
+
+---
+
+### 蔵本予想の証明
+
+<div class="simple-box">
+
+* 蔵本モデルは1975年に提唱され、1984年に蔵本予想が定式化された
+* 蔵本予想は、2012年に当時九州大の千葉逸人先生によって証明された！
+  * https://arxiv.org/abs/1008.0249
+* なので「蔵本-千葉定理」とこれからは呼ぶべきはず
+
+</div>
+
+---
+
+### まとめ
+
+<div class="simple-box">
+
+* 「リズムが揃う」現象を蔵本モデルが説明できる
+* 結合定数は周りとのリズムがズレているのを合わせようとする作用を表す
+* 結合定数が臨界点を超えると、急激にリズムが揃うようになる (蔵本予想、2012年に証明)
+* 蔵本モデルは代表的な相転移現象のモデル
+
+
+</div>
 
 
 ---
@@ -202,7 +380,7 @@ $$ \frac{d\theta_i}{dt} = \omega_i + \frac{K}{N} \sum_{j=1}^N \sin(\theta_j - \t
 
 <div class="simple-box">
 
-* 次回開催は5月31日を予定しています
+* 次回開催は6月28日を予定しています
 * LTだけでなく、YouTubeの物理の動画を「この動画をみんなで見たい！」という提案も大歓迎です！
 
 </div>
