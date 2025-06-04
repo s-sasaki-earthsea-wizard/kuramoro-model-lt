@@ -2,7 +2,7 @@
 
 ## 01-Title Slide
 
-Today I'll be talking about "Secrets of Rhythm Unveiled by the Kuramoto Model. We'll explore the phenomenon of "Why Does Applause Synchronize?" from a mathematical modeling perspective.
+Today I'll be talking about Secrets of Rhythm Unveiled by the Kuramoto Model. We'll explore the phenomenon of "Why Does Applause Synchronize?" from a mathematical modeling perspective.
 
 ## 02-About Me
 
@@ -20,9 +20,9 @@ First, I'll introduce the Kuramoto model, which can model synchronization phenom
 
 Next, I'll break down the meaning of the Kuramoto model's equation. The equation might look complex at first glance, but it's actually quite intuitive, so don't worry.
 
-Then, we'll observe a simulation of the Kuramoto model recreating "firefly flashing" patterns.
+Then, we'll observe a simulation of the Kuramoto model recreating firefly flashing patterns.
 
-Finally, I'll discuss the Kuramoto conjecture and the critical coupling constant, along with introducing representative examples of "phase transitions."
+Finally, I'll discuss the Kuramoto conjecture and the critical coupling constant, along with introducing representative examples of phase transitions.
 
 ## 04-Overview of the Kuramoto Model
 
@@ -48,7 +48,7 @@ In medicine, the model can also represent heart rhythm patterns, and disruptions
 
 Let's look at the Kuramoto model equation.
 
-In this equation, θ_i represents the phase of oscillator i, ω_i is its angular velocity, K is the coupling constant representing interaction strength, and N is the total number of oscillators.
+In this equation, theta sub i represents the phase of oscillator i, omega sub i is its angular velocity, K is the coupling constant representing interaction strength, and N is the total number of oscillators.
 
 While it might look complex at first, the meaning of this equation is actually quite straightforward.
 
@@ -56,7 +56,7 @@ While it might look complex at first, the meaning of this equation is actually q
 
 The second term on the right is particularly important.
 
-To understand this, think of θ_i as your applause rhythm and θ_j as other people's applause rhythms.
+To understand this, think of theta i as your applause rhythm and theta j as other people's applause rhythms.
 
 This term represents the average deviation between your rhythm and everyone else's. The larger the coupling constant K, the stronger the correction force for this deviation becomes, making rhythms more likely to synchronize.
 
@@ -66,7 +66,7 @@ Let me explain more about the coupling constant K.
 
 The larger K is, the more easily rhythms synchronize. Conversely, when K is small, each oscillator tends to maintain its own rhythm, making synchronization difficult.
 
-In the applause example, K can be thought of as quantifying how much you're consciously trying to match your applause to others. When K=0, you're not paying any attention to others' applause and just maintaining your own rhythm.
+In the applause example, K can be thought of as quantifying how much you're consciously trying to match your applause to others. When K equals 0, you're not paying any attention to others' applause and just maintaining your own rhythm.
 
 Later on, we'll see in simulations how behavior changes with different values of K.
 
@@ -76,7 +76,7 @@ Let's look at the Kuramoto model equation once more.
 
 This equation shows that the rate of change of your rhythm is determined by your natural rhythm and the average deviation from others' rhythms.
 
-When the coupling constant K=0, the second term disappears, and you continue moving at your natural rhythm speed ω_i indefinitely.
+When the coupling constant K equals 0, the second term disappears, and you continue moving at your natural rhythm speed omega i indefinitely.
 
 As K increases, the deviation from others' rhythms has a greater influence on your rhythm's rate of change.
 
@@ -92,13 +92,13 @@ Using this code, I simulated how firefly flashing rhythms synchronize. Let's obs
 
 ## 13-Firefly Flashing: K=2
 
-First, let's look at the case where K=2.
+First, let's look at the case where K equals 2.
 
 As you can see, rhythms gradually synchronize over time. The initially random flashing patterns slowly align until they're almost perfectly synchronized.
 
 ## 14-Firefly Flashing: K=5
 
-Next, the case where K=5.
+Next, the case where K equals 5.
 
 With a larger coupling constant, you can see that rhythms synchronize much more quickly. Synchronization occurs much faster than with K=2. This is because the force trying to match others' rhythms is stronger.
 
@@ -110,11 +110,11 @@ When the coupling constant is 0, meaning fireflies don't respond to others' flas
 
 ## 16-The Mysterious Behavior of the Coupling Constant
 
-Here's an interesting phenomenon. The system's behavior changes dramatically between K=1.59 and K=1.6.
+Here's an interesting phenomenon. The system's behavior changes dramatically between K equals 1.59 and K equals 1.6.
 
-On the left with K=1.59, no matter how much time passes, the rhythms don't synchronize.
+On the left with K equals 1.59, no matter how much time passes, the rhythms don't synchronize.
 
-On the right with K=1.6, although it takes time, the rhythms eventually synchronize.
+On the right with K equals 1.6, although it takes time, the rhythms eventually synchronize.
 
 With just a 0.01 difference, the system's behavior changes qualitatively. What does this mean?
 
@@ -124,13 +124,13 @@ Now let's discuss the Kuramoto conjecture and phase transitions.
 
 ## 18-The Kuramoto Conjecture
 
-The Kuramoto conjecture states that when the coupling constant exceeds a critical point K_c, rhythms suddenly begin to synchronize.
+The Kuramoto conjecture states that when the coupling constant exceeds a critical point K sub c, rhythms suddenly begin to synchronize.
 
-It's like water suddenly turning to ice at 0°C. The system's properties change qualitatively at the critical point.
+It's like water suddenly turning to ice at 0 degrees Celsius. The system's properties change qualitatively at the critical point.
 
-The critical point K_c is expressed by the equation shown on the slide.
+The critical point K sub c is expressed by the equation shown on the slide.
 
-Where g(ω) is the distribution function of angular velocities, and g(0) is the value of this function when ω=0.
+Where g of omega is the distribution function of angular velocities, and g of 0 is the value of this function when omega equals 0.
 
 ## 19-Calculating the Critical Point
 
@@ -142,15 +142,13 @@ We'll use this distribution's equation to calculate the critical point.
 
 The average angular velocity of all oscillators becomes 0. This average angular velocity is called the mean field frequency.
 
-This means the entire system's distribution can be represented by g(0). For a standard normal distribution, g(0) equals 1/√(2π).
+This means the entire system's distribution can be represented by g of 0. For a standard normal distribution, g of 0 equals 1 divided by the square root of 2 pi.
 
 ## 21-Calculating the Critical Point
 
-Substituting values into our earlier equation, we can get
+Substituting values into our earlier equation, we can get K sub c approximately equals 1.596
 
-K_c ≃ 1.596
-
-This explains why rhythms synchronize with K=1.6 but not with K=1.59. K=1.6 just barely exceeds the critical point, enabling synchronization. Meanwhile, K=1.59 falls below the critical point, so synchronization doesn't occur.
+This explains why rhythms synchronize with K equals 1.6 but not with K equals 1.59. K equals 1.6 just barely exceeds the critical point, enabling synchronization. Meanwhile, K equals 1.59 falls below the critical point, so synchronization doesn't occur.
 
 This phenomenon, where properties change dramatically beyond a critical point, is called a "phase transition."
 
@@ -158,7 +156,7 @@ This phenomenon, where properties change dramatically beyond a critical point, i
 
 Phase transitions appear in various physical phenomena.
 
-For example, water turning to ice at 0°C or water evaporating at 100°C are classic examples of phase transitions. Another example is magnets losing their magnetism at high temperatures.
+For example, water turning to ice at 0 degrees Celsius or water evaporating at 100 degrees Celsius are classic examples of phase transitions. Another example is magnets losing their magnetism at high temperatures.
 
 On an even grander scale, the beginning of the universe is sometimes explained as a vacuum phase transition.
 
